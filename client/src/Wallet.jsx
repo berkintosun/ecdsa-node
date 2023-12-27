@@ -1,6 +1,9 @@
 import server from "./server";
+import { useState } from "react";
 
-function Wallet({ address, setAddress, balance, setBalance }) {
+function Wallet() {
+  const [balance, setBalance] = useState(0);
+  const [address, setAddress] = useState("");
   async function onChange(evt) {
     const address = evt.target.value;
     setAddress(address);

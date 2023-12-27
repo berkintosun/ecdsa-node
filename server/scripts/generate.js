@@ -15,8 +15,6 @@ if(params.length == 2){
     console.log("signature hex = ",signature.toCompactHex())
     console.log("signature recovery bit = ",signature.recovery)
     console.log(signature)
-    
-
 }
 else{
     console.log("private key ",utils.toHex(privateKey))

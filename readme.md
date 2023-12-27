@@ -9,6 +9,12 @@ This project is an example of using a client and server to facilitate transfers 
 In this project, the Alchemy tutor implemented the version that makes user to send private key to the server which creates a huge security / trust problems as anyone who has the private key can steal the money that account has. In this version, I am going to make user to sign a hex of JSON that contains the receipter address, amount and the current time of the request. The user needs to sign it on their own device without any interaction from the website and this will make sure their private keys are not in risk of exposure. 
 
 This design choice is also has its drawbacks if an hacker can do a Man in the Middle Attack, they can receive the same signature and they can re-use it to make the same transaction. This can be prevented (or at least make it harder to achieve) by using secure communication methodologies such as SSL/TLS. It can also be prevented by checking the signature if it existed before in our blockchain. Also we can use the timestamp which json contains and check if the signature / request is created in specific time limit such as a minute. In this project we are going to skip implementing this part as this is not the goal of the project.
+
+### Testing
+
+You can use generate script inside of server folder to generate private/public key and address. If you provide 2 argument, it will use first argument as hashed message and second argument as private key and use them to sign the message hash. It will print the compact hex version of the signature and recovery bit as well.
+
+The premade accounts and their information is inside of index.js of server. I added comments for their private keys in order to make the test easier for new users.
  
 ### Client
 
